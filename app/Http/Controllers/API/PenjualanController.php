@@ -16,21 +16,7 @@ class PenjualanController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
-    {
-        $today = Carbon::today()->toDateString();
-        $penjualan = Penjualan::with('barang')
-            ->whereDate('tanggal', $today)
-            ->latest()
-            ->get();
-        
-        return response()->json([
-            'success' => true,
-            'message' => 'Daftar Penjualan Hari Ini',
-            'data' => $penjualan
-        ]);
-    }
-
+    
     /**
      * Menampilkan detail penjualan
      *
