@@ -12,7 +12,11 @@ class KategoriController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    
+    public function index()
+    {
+        $kategori = Kategori::orderBy('nama')->paginate(10);
+        return view('admin.kategori.index', compact('kategori'));
+    }
 
     /**
      * Menampilkan form untuk membuat kategori baru
