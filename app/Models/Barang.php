@@ -26,11 +26,9 @@ class Barang extends Model
         'nama',
         'harga',
         'stok',
-        'gambar',
-        'keterangan',
-        'kategori',
+
     ];
-    
+
     /**
      * Get the gambar attribute with full URL
      *
@@ -42,14 +40,14 @@ class Barang extends Model
         if (!$value) {
             return null;
         }
-        
+
         if (filter_var($value, FILTER_VALIDATE_URL)) {
             return $value;
         }
-        
+
         // Ambil hanya nama file saja
         $filename = basename($value);
-        
+
         // Return URL publik langsung ke folder images
         return url('images/barang/' . $filename);
     }
