@@ -21,13 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'otp',
-        'otp_expires_at',
-        'is_verified',
-        'role',
+
     ];
 
     /**
@@ -67,7 +61,7 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->otp = $otp;
         $this->otp_expires_at = Carbon::now()->addMinutes(10);
         $this->save();
-        
+
         return $otp;
     }
 
@@ -85,10 +79,10 @@ class User extends Authenticatable implements MustVerifyEmail
             $this->otp = null;
             $this->otp_expires_at = null;
             $this->save();
-            
+
             return true;
         }
-        
+
         return false;
     }
 
