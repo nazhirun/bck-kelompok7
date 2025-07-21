@@ -14,10 +14,7 @@ class LoginController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function showLoginForm()
-    {
-        return view('auth.login');
-    }
+  
 
     /**
      * Handle admin login request
