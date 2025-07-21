@@ -8,12 +8,12 @@ class Kategori extends Model
 {
     protected $table = 'kategori';
     protected $fillable = ['nama'];
-    
+
     /**
      * Relasi dengan barang
      */
     public function barang()
     {
-        return $this->hasMany(Barang::class, 'kategori_id', 'id');
+
     }
 }
