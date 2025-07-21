@@ -26,7 +26,9 @@ class Barang extends Model
         'nama',
         'harga',
         'stok',
-
+        'gambar',
+        'keterangan',
+        'kategori',
     ];
 
     /**
