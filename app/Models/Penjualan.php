@@ -23,7 +23,11 @@ class Penjualan extends Model
      * @var array
      */
     protected $fillable = [
-        ,
+        'tanggal',
+        'faktur',
+        'barang_id',
+        'qty',
+        'total'  ,
     ];
 
     /**
