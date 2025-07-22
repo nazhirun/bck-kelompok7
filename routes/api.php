@@ -33,7 +33,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route untuk API Barang
 // PERHATIAN: Urutan rute penting! Rute spesifik harus ditempatkan sebelum rute dengan parameter
-
+Route::get('/barang/image/{filename}', [BarangController::class, 'showImage']);
+Route::get('/barang', [BarangController::class, 'index']);
+Route::get('/barang/{id}', [BarangController::class, 'show']);
 
 // Route untuk API Penjualan
 Route::get('/penjualan/faktur/{faktur}', [PenjualanController::class, 'getByFaktur']);
